@@ -45,13 +45,18 @@ public class Delivery {
     public static void startDelivery(OrderPlaced orderPlaced) {
         //implement business logic here:
 
-        /** Example 1:  new item 
         Delivery delivery = new Delivery();
-        repository().save(delivery);
+        delivery.setOrderId(orderPlaced.getId());
+        delivery.setAddress(orderPlaced.getAddress());
+        delivery.setCustomerId(orderPlaced.getCustomerId());
+        delivery.setItemId(orderPlaced.getItemId());
+        delivery.setQty(orderPlaced.getQty());
+        delivery.setStatus("DELIVERY COMPLETED");
+        repository().save(delivery); // save하는 순간 영속성 상태됨
 
         DeliveryCompleted deliveryCompleted = new DeliveryCompleted(delivery);
         deliveryCompleted.publishAfterCommit();
-        */
+
 
         /** Example 2:  finding and process
         
